@@ -1,5 +1,7 @@
-PImage[] Card = new PImage[52];
+PImage[] Card  = new PImage[52];
 String[] Kort = new String[52];
+int sidsteKortIndex = 51;
+
 
 void setup(){
   size(1000,1000);
@@ -15,18 +17,25 @@ for(int i=0; i < 52 ; i ++){
 }
 
 void draw(){
-  if(mousePressed == true){
+
+  rectMode(CENTER);
+  rect(width/2,height/2, 150, 150);
+}
+  
+
+
+void mouseReleased()
+{
+if ((mouseX<width/2+150/2)&&(mouseX>width/2-150/2)&&(mouseY>height/2-150/2)&&(mouseY<height/2+150/2))
+    {
   int i=0;
   int i2 = 0;
   i = (int)random(0,52);
   i2 = (int)random(0,52);
   image(Card[i], width/2-250, height/2, 500/1.5, 726/1.5);
   image(Card[i2], width/2+250, height/2, 500/1.5, 726/1.5);
-}}
-  
-
-
-
+    }
+}
 
 
 String[] Blandet;
