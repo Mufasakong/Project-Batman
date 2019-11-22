@@ -1,22 +1,23 @@
-void Scene1Draw() {
+void Scene1Draw() //Spillet selv {
   fill(250);
   textSize(100);
   text(Card.size(), 100, 100);
 }
 
-void Scene0Draw() {
+void Scene0Draw() //Hovedmenu {
   String[] Startspil = {"Startspil.png", "Startspilon.png"};
   if ((mouseX<width/2+1621/3/2)&&(mouseX>width/2-1621/3/2)&&(mouseY>height/2-885/3/2)&&(mouseY<height/2+885/3/2)){
-    image(loadImage(Startspil[1]), width/2,height/2, 1621/3, 885/3);
+    image(loadImage(Startspil[1]), width/2,height/2, 1621/3, 885/3); // Startspil knap lyser
   } else{
     clear();
-    image(loadImage(Startspil[0]), width/2,height/2, 1621/3, 885/3);
+    image(loadImage(Startspil[0]), width/2,height/2, 1621/3, 885/3); // Startspil knap forholder normal
   }
-  
+  image(loadImage("Botman.png"), 0-200, height/2); // Billedet af Batman
+  image(loadImage("Joker.png"), width-25, height/2+100); // Billedet af Joker
   
 }
 
-void mouse1Pressed(){
+void mouse1Pressed() //Spillet selv {
 if (Card.size() != 0){
 
   int index = (int)random(0,Card.size());
@@ -52,7 +53,7 @@ if (Card.size() != 0){
   }
 }
 
-void mouse0Pressed() {
+void mouse0Pressed() //Hovedmenu {
   if ((mouseX<width/2+1621/3/2)&&(mouseX>width/2-1621/3/2)&&(mouseY>height/2-885/3/2)&&(mouseY<height/2+885/3/2))
   {
     println("Loading Game...");
